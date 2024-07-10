@@ -25,6 +25,7 @@ function ReferralForm() {
 
         try {
             const response = await fetch('https://accredian-backend-task-lgv5.onrender.com/referrals', {
+                // const response = await fetch('http://localhost:8000/referrals', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,11 +33,12 @@ function ReferralForm() {
                 body: JSON.stringify(formData)
             });
 
+            const data = await response.json();
+
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(data.error);
             }
 
-            const data = await response.json();
             console.log('Form submitted', data);
 
             setFormData({
