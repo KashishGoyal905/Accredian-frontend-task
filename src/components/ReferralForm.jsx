@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ReferralForm() {
+function ReferralForm({ closeModal }) {
     const [formData, setFormData] = useState({
         referrerName: '',
         referrerEmail: '',
@@ -39,7 +39,7 @@ function ReferralForm() {
                 throw new Error(data.error);
             }
 
-            console.log('Form submitted', data);
+            console.log('Form submitted ', data);
 
             setFormData({
                 referrerName: '',
@@ -102,12 +102,20 @@ function ReferralForm() {
                     required
                 />
             </div>
-            <button
-                type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-            >
-                Submit
-            </button>
+            <div className='flex justify-around'>
+                <button
+                    type="submit"
+                    className="bg-blue-500 text-white h-12 px-4 py-2 align-middle rounded hover:bg-blue-600 transition"
+                >
+                    Submit
+                </button>
+                <button
+                    className="bg-red-500 text-white h-12 px-4 py-2 align-middle rounded hover:bg-red-600 transition"
+                    onClick={closeModal}
+                >
+                    Close
+                </button>
+            </div>
         </form>
     );
 }

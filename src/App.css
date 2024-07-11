@@ -32,7 +32,28 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.navbar {
+  border-bottom: 2px solid #e5e5e5;
+  padding: 1rem 2rem;
+}
+
+.btn-primary {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-outline {
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #ebf8ff, #dbeafe);
 }
